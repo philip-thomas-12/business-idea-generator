@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💡 Business Idea Finder</title>
+
+  <!-- Retro Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+body {
+  background-image: url('business.jpg'); /* add a relevant image in public/ */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.2rem;
+  color: #fff;
+  background: rgba(0, 0, 128, 0.80);
+  padding: 1rem 0;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0,0,50,0.6);
+  letter-spacing: 2px;
+}
+
+.search-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  max-width: 660px;
+  margin: 2rem auto 0 auto;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 12px 14px;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 350px;
+  border: 2px solid #000080;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f0f8ff;
+  color: #003366;
+  margin-right: 0.75rem;
+}
+
+.btn {
+  font-family: 'Press Start 2P', cursive;
+  margin: 0.15rem 0.2rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 0.96rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,50,0.16);
+}
+
+.btn:hover {
+  background-color: #4169e1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+#idea-content {
+  background: rgba(255,255,255,0.96);
+  border: 2px solid #1e90ff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  margin: 2.5rem auto 0 auto;
+  min-height: 120px;
+  max-width: 800px;
+  box-shadow: 0 2px 16px rgba(0,0,50,0.08);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.08rem;
+}
+  </style>
+</head>
+
+<body>
+  <h1>💡 Business Idea Generator</h1>
+
+  <div class="search-container">
+    <input type="text" id="ideaInput" placeholder="Enter industry or interest...">
+    <button class="btn" onclick="getIdea()">🔍 Generate</button>
+    <button class="btn" onclick="downloadPDF()">📄 Download as PDF</button>
+  </div>
+
+  <div id="idea-content">
+    <!-- Idea will appear here -->
+  </div>
+
+  <!-- html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    async function getIdea() {
+      const topic = document.getElementById('ideaInput').value.trim();
+      if (!topic) return alert("Please enter an industry or interest!");
+
+      const res = await fetch(`/api/idea?topic=${encodeURIComponent(topic)}`);
+      const data = await res.json();
+
+      document.getElementById('idea-content').innerText = data.idea || "Could not generate idea.";
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById('idea-content');
+      const opt = {
+        margin:       0.5,
+        filename:     'business-idea.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>
