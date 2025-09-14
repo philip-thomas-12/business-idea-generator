@@ -20,7 +20,7 @@ A simple Node.js + Express application that generates unique business ideas usin
 
 Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone (https://github.com/philip-thomas-12/business-idea-generator.git)
 cd business-idea-gen
 Install dependencies:
 npm install
