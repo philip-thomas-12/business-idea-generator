@@ -12,7 +12,7 @@ A simple Node.js + Express application that generates unique business ideas usin
 
 ---
 
-## 📂 Project Structure
+
 
 ## 📂 Project Structure
 
