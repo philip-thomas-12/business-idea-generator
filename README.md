@@ -1,6 +1,8 @@
 # 💡 Business Idea Generator
 
-A simple Node.js + Express application that generates **unique business ideas** using the OpenAI API.
+A simple Node.js + Express application that generates unique business ideas using the OpenAI API.
+
+---
 
 ## 🚀 Features
 - Generates business ideas instantly based on user input (industry, interests, budget, etc.)
@@ -19,11 +21,19 @@ business-idea-gen/
 ├── .gitignore # Ignore node_modules, .env, etc.
 └── README.md # Project documentation
 
+---
 
 ## 🛠️ Installation & Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone
-
-   cd business-idea-gen
+Clone the repository:
+```bash
+git clone <your-repo-url>
+cd business-idea-gen
+Install dependencies:
+npm install
+Create a .env file in the root folder:
+OPENAI_API_KEY=your_api_key_here
+Run the server:
+node server.js
+Visit:
+http://localhost:3000
