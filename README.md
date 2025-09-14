@@ -35,5 +35,5 @@ Create a .env file in the root folder:
 OPENAI_API_KEY=your_api_key_here
 Run the server:
 node server.js
-Visit:
+Visit in your browser:
 http://localhost:3000
