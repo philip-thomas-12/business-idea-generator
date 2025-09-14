@@ -14,16 +14,16 @@ A simple Node.js + Express application that generates unique business ideas usin
 
 
 
-## 📂 Project Structure
+📁 Project Structure
+
+This is a breakdown of the key files and directories in this project:
 
 business-idea-gen/
-├── server.js # Main server file (Express app)
-├── package.json # Project metadata & dependencies
-├── .env # Environment variables (API key etc.)
-├── .gitignore # Ignore node_modules, .env, etc.
-└── README.md # Project documentation
-
-
+├── server.js               # The main server file that runs the Express app.
+├── package.json            # Lists project metadata and dependencies.
+├── .env                    # Stores environment-specific variables like API keys.
+├── .gitignore              # Specifies files and directories to be ignored by Git.
+└── README.md               # You're reading it! Project documentation.
 ---
 
 ## 🛠️ Installation & Setup
