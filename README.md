@@ -11,3 +11,10 @@ A simple Node.js + Express application that generates **unique business ideas** 
 ---
 
 ## 📂 Project Structure
+
+business-idea-gen/
+├── server.js # Main server file (Express app)
+├── package.json # Project metadata & dependencies
+├── .env # Environment variables (API key etc.)
+├── .gitignore # Ignore node_modules, .env, etc.
+└── README.md # Project documentation
