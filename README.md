@@ -18,7 +18,6 @@ business-idea-gen/
 ├── .env # Environment variables (API key etc.)
 ├── .gitignore # Ignore node_modules, .env, etc.
 └── README.md # Project documentation
----
 
 ## 🛠️ Installation & Setup
 
