@@ -24,5 +24,6 @@ business-idea-gen/
 
 1. **Clone the repository**
    ```bash
-   git clone 
+   git clone
+
    cd business-idea-gen
