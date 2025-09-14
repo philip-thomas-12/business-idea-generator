@@ -25,7 +25,7 @@ cd business-idea-gen
 Install dependencies:
 npm install
 Create a .env file in the root folder:
-OPENAI_API_KEY=your_api_key_here
+GEMINI_API_KEY=your_api_key_here
 Run the server:
 node server.js
 Visit in your browser:
