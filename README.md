@@ -19,6 +19,7 @@ business-idea-gen/
 ├── .gitignore # Ignore node_modules, .env, etc.
 └── README.md # Project documentation
 
+
 ## 🛠️ Installation & Setup
 
 1. **Clone the repository**
