@@ -4,6 +4,7 @@ A simple Node.js + Express application that generates unique business ideas usin
 
 ---
 
+
 ## 🚀 Features
 - Generates business ideas instantly based on user input (industry, interests, budget, etc.)
 - Uses OpenAI API for intelligent and creative text generation
